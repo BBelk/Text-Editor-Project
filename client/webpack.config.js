@@ -18,13 +18,53 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin({
+        template: './index.html',
+        title: 'Webpack Plugin',
+      }),
+      // new GenerateSW(),
+      new WebpackPwaManifest({
+        // TODO: Create a manifest.json:
+        name: 'Just Another Text Editor',
+        short_name: 'JATE',
+        description: 'Homework assignment JATE!',
+        background_color: '#ffffff',
+
+        // stops a bunch of uuids, keeps things generic
+        fingerprints: false,
+        publicPath: '.',
+        // start_url: '/',
+        
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512], // multiple sizes
+            destination: path.join('assets', 'icons')
+          }
+        ]
+      }),
+     
     ],
 
     module: {
       rules: [
-        
+        {
+          test: /\.css$/i,
+          use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },
+          },
+        },
       ],
     },
   };
 };
+
