@@ -15,8 +15,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "code-mirror-themes": "^1.0.0",
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "idb": "^7.1.0",
+    "if-env": "^1.0.4",
+    "workbox-webpack-plugin": "^6.5.4"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

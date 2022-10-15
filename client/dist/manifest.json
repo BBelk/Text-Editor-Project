@@ -31,11 +31,11 @@
       "type": "image/png"
     }
   ],
-  "name": "My Progressive Web App",
-  "short_name": "MyPWA",
+  "name": "Just Another Text Editor",
+  "short_name": "JATE",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": ".",
-  "description": "My awesome Progressive Web App!",
+  "description": "Homework assignment JATE!",
   "background_color": "#ffffff"
 }
