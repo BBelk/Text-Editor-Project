@@ -19,7 +19,7 @@ export const putDb = async (content) => {
   const jateDb = await openDB('jate', 1);
   const tx = jateDb.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.put({ id: 1, jateContent: content });
+  const request = store.put({ id: 0, jateContent: content });
   const result = await request;
   console.log('🚀 - data saved to the database', result);
 }
@@ -31,10 +31,19 @@ export const getDb = async () => {
   const jateDb = await openDB('jate', 1);
   const tx = jateDb.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-  const request = store.get(1);
+  const request = store.get(0);
   const result = await request;
-  console.log('result.value', result);
-  return result;
+  // console.log('result.value', result.jateContent);
+  // if(result != null){return result.jateContent}
+  // else{
+  //   return null;
+  // }
+  // if(result.jateContent == undefined){
+  if (typeof result == 'undefined'){
+    return null;
+  }
+  return result.jateContent;
+  // return result;
   // console.log("ATTEMPTING TO GET");
   // console.log('GET all from the database');
   // const jateDb = await openDB('jate', 1);
