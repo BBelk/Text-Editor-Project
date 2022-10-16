@@ -43,16 +43,6 @@ export const getDb = async () => {
     return null;
   }
   return result.jateContent;
-  // return result;
-  // console.log("ATTEMPTING TO GET");
-  // console.log('GET all from the database');
-  // const jateDb = await openDB('jate', 1);
-  // const tx = jateDb.transaction('jate', 'readonly');
-  // const store = tx.objectStore('jate');
-  // const request = store.getAll();
-  // const result = await request;
-  // console.log('result.value', result);
-  // return result;
 }
 // console.error('getDb not implemented');
 
