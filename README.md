@@ -27,4 +27,4 @@
 
   ## Visuals
 
-  ![Alt text](https://github.com/BBelk/Text-Editor-Project/tree/main/assets/JATE-screenshot.png "Just Another Text Editor Project")
+  ![Alt text](https://github.com/BBelk/Text-Editor-Project/blob/main/assets/JATE-screenshot.png "Just Another Text Editor Project")
